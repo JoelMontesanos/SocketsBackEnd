@@ -20,9 +20,15 @@
         });
         socket.emit('mensaje',{nombre:'Joel'}); // this is emiting a message
 
-        socket.on('mensaje',function(payload){ // this is listening a message
+        socket.on('nuevo-mensaje',function(payload){ // this is listening a message
             console.log('Escuchando: ', payload);
+        });
+
+        socket.on('active-bands', function(bands){
+            console.clear();
+            console.table( bands);
         })
+
     </script>
     
 </body>
